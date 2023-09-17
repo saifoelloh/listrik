@@ -28,9 +28,7 @@ func NewRepo(collection *mongo.Collection) Repository {
 // ReadBook is a mongo repository that helps to fetch books
 func (r *repository) ReadUser() (*[]presenter.UserPLN, error) {
 	var users []presenter.UserPLN
-	cursor, err := r.Collection.Find(context.Background(), bson.D{
-		{Key: "$text", Value: bson.D{{Key: "$search", Value: "ANA"}}},
-	})
+	cursor, err := r.Collection.Find(context.Background(), bson.D{})
 	if err != nil {
 		return nil, err
 	}
