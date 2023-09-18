@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  api:
+    container_name: api-listrik
+    image: liku0muhammad/go-listrik
+    environment:
+      APP_ENV: staging
+      APP_NAME: manusia-listrik
+      DB_NAME: pln
+      DB_COLLECTION_PLN: Users
+      DB_URI: "mongodb://admin:User#1st@localhost:27017/"
+    ports:
+      - 8080:8080
